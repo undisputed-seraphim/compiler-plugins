@@ -26,9 +26,15 @@ This will define the following variables:
 
 #]=======================================================================]
 
-find_path(libgcc_plugin_INCLUDE_DIR NAMES "gcc.h" PATHS "/usr/${CMAKE_SHARED_LIBRARY_PREFIX}/gcc/${CMAKE_C_LIBRARY_ARCHITECTURE}/${libgcc_FIND_VERSION_MAJOR}/plugin/include")
+find_path(libgcc_plugin_INCLUDE_DIR
+    NAMES "gcc.h"
+    PATHS "/usr/${CMAKE_SHARED_LIBRARY_PREFIX}/gcc/${CMAKE_C_LIBRARY_ARCHITECTURE}/${libgcc_FIND_VERSION_MAJOR}/plugin/include"
+)
 
-find_library(libgcc_plugin_LIBRARY NAMES "cc1plugin" PATH_SUFFIXES "gcc/${CMAKE_C_LIBRARY_ARCHITECTURE}/${libgcc_FIND_VERSION_MAJOR}/plugin")
+find_library(libgcc_plugin_LIBRARY
+    NAMES "cc1plugin"
+    PATH_SUFFIXES "gcc/${CMAKE_C_LIBRARY_ARCHITECTURE}/${libgcc_FIND_VERSION_MAJOR}/plugin"
+)
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(libgcc
